@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title></title>
+    <style>
+
+    </style>
+    <script src="require.js"></script>
+
+</head>
+<body>
+<a href="#profile/jack/9">#1</a>
+<a href="#count/12">#2</a>
+</body>
+<script>
+   require(['tiny-route'],function(tinyRoute){
+       var routes = new tinyRoute();
+
+       routes.add('profile/:name/:age', function (r) {
+           console.log(r.params.name + ' is ' +  r.params.age + ' year old');
+       });
+       routes.add('count/:num', function (r) {
+           console.log('The count is '+ r.params.num);
+       });
+
+       routes.start();
+   });
+</script>
+</html>
